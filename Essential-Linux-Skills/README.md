@@ -75,7 +75,7 @@ Analyzed the `auth.log` file to identify:
 grep "Failed password" auth.log | wc -l
 ```
 
-![Failed Login Analysis](Screenshots/failed_SSHlogin.png)
+![Failed Login Analysis](Screenshots/failed_SSHlogin.JPG)
 
 #### Finding
 
@@ -92,6 +92,8 @@ Extracted source IP addresses responsible for failed authentication attempts.
 ```bash
 grep "Failed password" auth.log | awk '{print $11}' | sort | uniq -c | sort -nr
 ```
+
+![Failed Login Analysis](Screenshots/failed_attempts.JPG)
 
 #### Finding
 
@@ -121,6 +123,8 @@ Used `sed` to remove sensitive user information before sharing logs.
 sed 's/admin/REDACTED_USER/g' auth.log > auth_sanitized.log
 ```
 
+![Log sanitization](Screenshots/sanitized_log.JPG)
+
 #### Purpose
 
 - Protect sensitive information
@@ -138,6 +142,8 @@ Analyzed web server logs for command injection attempts.
 ```bash
 grep -E 'cmd=(whoami|cat|ls|id|uname)' access.log
 ```
+
+![Web exploit detection](Screenshots/exploit_detection.JPG)
 
 #### Findings
 
@@ -167,6 +173,8 @@ Analyzed repeated requests to the same API endpoint.
 ```bash
 grep "/api/check" access.log | awk '{print $1}' | sort | uniq -c
 ```
+
+![C2 detection](Screenshots/C2_detection.JPG)
 
 #### Findings
 
@@ -207,6 +215,8 @@ Correlated failed and successful authentication events.
 grep "Accepted password" auth.log
 ```
 
+![Successful login](Screenshots/successful_SSHlogin.JPG)
+
 #### Finding
 
 Successful SSH login observed from:
@@ -237,6 +247,8 @@ triage_auth.sh
 
 to automatically identify IP addresses exceeding a failed login threshold.
 
+![SOC automation](Screenshots/bash_scripting.JPG)
+
 ### Script Functionality
 
 - Extract failed login attempts
@@ -250,6 +262,8 @@ to automatically identify IP addresses exceeding a failed login threshold.
 chmod +x triage_auth.sh
 ./triage_auth.sh
 ```
+
+![SOC automation](Screenshots/traige_auth.sh.JPG)
 
 ### Output
 
@@ -425,32 +439,18 @@ This activity may indicate:
 
 ---
 
-## Lessons Learned
+## Conclusion
 
-This project strengthened my ability to:
-
-- Investigate security incidents using Linux logs.
-- Detect attacker behavior through event correlation.
-- Analyze authentication and web server logs.
-- Identify indicators of compromise (IOCs).
-- Automate repetitive SOC tasks using Bash.
-- Apply incident response methodologies in a practical SOC environment.
-
----
-
-```
+This project strengthened my ability to investigate security incidents using Linux logs, detect attacker behavior through event correlation, analyze authentication and web server logs, identify indicators of compromise (IOCs), automate repetitive SOC tasks using Bash, and apply incident response methodologies in a practical SOC environment.
+Overall, the lab provided hands-on exposure to SOC workflows and highlighted the importance of log analysis in detecting and responding to cyber threats in real-world environments.
 
 
 
 
----
 
-## Author
 
-**Ebere Anastasia Akpan**
 
-Cybersecurity Analyst | SOC Analyst | Cloud Security (AWS) | IT Support
 
-GitHub: https://github.com/YOUR-USERNAME
 
-LinkedIn: https://linkedin.com/in/YOUR-LINKEDIN
+
+
