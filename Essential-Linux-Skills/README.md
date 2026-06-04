@@ -436,29 +436,10 @@ This project strengthened my ability to:
 
 ---
 
-## Screenshots
-
-Add screenshots from your lab report in an `/images` folder and reference them below:
-
-```markdown
-![Failed Login Analysis](images/failed-login-analysis.png)
-
-![Command Injection Detection](images/command-injection.png)
-
-![Privilege Escalation Evidence](images/privilege-escalation.png)
-
-![Bash Automation Script](images/bash-triage-script.png)
 ```
 
----
 
-## Project Documentation
 
-Full project report available in this repository:
-
-```text
-Essential_Linux_Command_Line_Skills_for_SOC_Analysts.pdf
-```
 
 ---
 
