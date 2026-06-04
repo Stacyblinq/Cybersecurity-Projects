@@ -75,6 +75,8 @@ Analyzed the `auth.log` file to identify:
 grep "Failed password" auth.log | wc -l
 ```
 
+![Failed Login Analysis](Screenshots/failed_SSHlogin.png)
+
 #### Finding
 
 A total of **260 failed login attempts** were identified, indicating possible brute-force activity targeting the server.
